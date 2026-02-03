@@ -83,6 +83,8 @@ response = client.models.generate_content(
     contents=prompt
 )
 ```
+
+### ⚠️ Troubleshooting
 | Error Code | Potential Cause | How to Fix |
 | :--- | :--- | :--- |
 | **429 RESOURCE_EXHAUSTED** | Free tier quota reached. | Wait 60 seconds or switch to a "Lite" model. |
