@@ -1,14 +1,28 @@
+<div align="center">
 
-# 🚀 Gemini CLI Assistant
+# 🧠 Gemini CLI Assistant
+### Your AI Terminal Companion
 
-A lightweight, Python-based terminal client for Google's Gemini AI. Designed for Linux power users who want quick AI answers directly in their console without opening a browser.
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Arch Linux](https://img.shields.io/badge/Arch_Linux-Compatible-1793d1?style=for-the-badge&logo=arch-linux&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
-## ✨ Features
+<p align="center">
+  A lightweight, lightning-fast terminal client for Google's Gemini AI.<br>
+  Built for Linux power users who refuse to leave the console.
+</p>
 
-* **Fast & Light:** Runs entirely in the terminal.
-* **Smart Error Handling:** Automatically detects quota limits (Error 429) and model configuration errors (Error 404).
-* **Secure:** Uses `.env` file configuration to keep your API keys safe.
-* **Model Diagnoser:** Includes a script to list all Gemini models available to your account.
+</div>
+
+---
+
+## ⚡ Why use this?
+
+* **🚀 Zero Lag:** No browser overhead. Runs instantly in your terminal.
+* **🛡️ Smart Handling:** Auto-detects API limits (429) and handles model versioning (404).
+* **🔒 Secure:** Keeps your API keys safe in `.env` (never uploaded to Git).
+* **🐧 Linux Native:** Tested on Arch Linux / CachyOS with Wayland support.
 
 ---
 
