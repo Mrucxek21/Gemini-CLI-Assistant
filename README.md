@@ -83,7 +83,8 @@ response = client.models.generate_content(
     contents=prompt
 )
 ```
-### ⚠️ Troubleshooting
-429 RESOURCE_EXHAUSTED	Free tier limit reached.	Wait 60 seconds or switch to a "Lite" model.
-404 NOT_FOUND	Wrong model name in code.	Run check_models.py and update the name in ask.py.
-ModuleNotFoundErrorVirtual environment not active.Run source venv/bin/activate.fish again.
+| Error Code | Potential Cause | How to Fix |
+| :--- | :--- | :--- |
+| **429 RESOURCE_EXHAUSTED** | Free tier quota reached. | Wait 60 seconds or switch to a "Lite" model. |
+| **404 NOT_FOUND** | Incorrect model name in code. | Run `check_models.py` and update `ask.py`. |
+| **ModuleNotFoundError** | Virtual environment not active. | Run `source venv/bin/activate.fish`. |
