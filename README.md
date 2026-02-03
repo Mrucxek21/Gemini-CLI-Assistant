@@ -30,7 +30,7 @@
 
 ### 1. Clone the repository
 ```bash
-git clone [https://github.com/Mrucxek21/Gemini-CLI-Assistant.git](https://github.com/Mrucxek21/Gemini-CLI-Assistant.git)
+git clone https://github.com/Mrucxek21/Gemini-CLI-Assistant.git
 cd Gemini-CLI-Assistant
 ```
  ### 2. Set up Environment
