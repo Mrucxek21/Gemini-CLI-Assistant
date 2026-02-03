@@ -1,4 +1,4 @@
-```markdown
+
 # 🚀 Gemini CLI Assistant
 
 A lightweight, Python-based terminal client for Google's Gemini AI. Designed for Linux power users who want quick AI answers directly in their console without opening a browser.
