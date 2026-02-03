@@ -44,7 +44,7 @@ source venv/bin/activate
 3. Install DependenciesBashpip install -r requirements.txt
 ⚙️ ConfigurationGet your Free API Key from Google AI Studio.Create a .env file in the project folder:Bashcp .env.example .env
 nano .env
-Paste your key:Fragment koduGEMINI_API_KEY=AIzaSy...YourKeyHere
+Paste your key inside the file:Fragment koduGEMINI_API_KEY=AIzaSy...YourKeyHere
 🚀 Usage💬 Ask a QuestionBashpython ask.py "Write a bash script to update Arch Linux mirrors"
 🔍 Check Available ModelsNot sure which model works? Run the diagnostic tool:Bashpython check_models.py
 🔧 Change AI ModelEdit ask.py to switch between speed (Flash) and power (Pro):Python# Inside ask.py
