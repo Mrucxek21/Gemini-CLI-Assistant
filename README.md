@@ -1,92 +1,146 @@
-<div align="center">
+```markdown
+# 🚀 Gemini CLI Assistant
 
-# 🧠 Gemini CLI Assistant
-### Your AI Terminal Companion
+A lightweight, Python-based terminal client for Google's Gemini AI. Designed for Linux power users who want quick AI answers directly in their console without opening a browser.
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Arch Linux](https://img.shields.io/badge/Arch_Linux-Compatible-1793d1?style=for-the-badge&logo=arch-linux&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+## ✨ Features
 
-<p align="center">
-  A lightweight, lightning-fast terminal client for Google's Gemini AI.<br>
-  Built for Linux power users who refuse to leave the console.
-</p>
-
-</div>
-
----
-
-## ⚡ Why use this?
-
-* **🚀 Zero Lag:** No browser overhead. Runs instantly in your terminal.
-* **🛡️ Smart Handling:** Auto-detects API limits (429) and handles model versioning (404).
-* **🔒 Secure:** Keeps your API keys safe in `.env` (never uploaded to Git).
-* **🐧 Linux Native:** Tested on Arch Linux / CachyOS with Wayland support.
+* **Fast & Light:** Runs entirely in the terminal.
+* **Smart Error Handling:** Automatically detects quota limits (Error 429) and model configuration errors (Error 404).
+* **Secure:** Uses `.env` file configuration to keep your API keys safe.
+* **Model Diagnoser:** Includes a script to list all Gemini models available to your account.
 
 ---
 
 ## 🛠️ Installation
 
-### 1. Clone the repository
+### Prerequisites
+* Python 3.10 or newer
+* A free Google AI Studio API Key
+
+### Step 1: Clone the repository
+
 ```bash
-git clone https://github.com/Mrucxek21/Gemini-CLI-Assistant.git
-cd Gemini-CLI-Assistant
+git clone [https://github.com/Mrucxek21/Gemini-CLI-Assistant.git](https://github.com/Mrucxek21/Gemini-CLI-Assistant.git)
+cd gemini-cli
+
 ```
- ### 2. Set up Environment
-Arch Linux / CachyOS (Recommended):
+
+### Step 2: Set up Virtual Environment
+
+**🟢 Arch Linux (CachyOS, Manjaro, EndeavourOS)**
+
 ```bash
-# Install pip
+# 1. Install pip if missing
 sudo pacman -S python-pip
-# Create & Activate Virtual Environment
+
+# 2. Create virtual environment
 python -m venv venv
+
+# 3. Activate it (Fish Shell)
 source venv/bin/activate.fish
+# OR if you use Bash/Zsh:
+# source venv/bin/activate
+
 ```
-### Debian / Ubuntu:
+
+**🔴 Debian / Ubuntu / Linux Mint**
+
 ```bash
-sudo apt install python3-venv python3-pip
+# 1. Install venv package
+sudo apt update && sudo apt install python3-venv python3-pip
+
+# 2. Create virtual environment
 python3 -m venv venv
+
+# 3. Activate it
 source venv/bin/activate
+
 ```
-### 3. Install Dependencies
+
+### Step 3: Install Dependencies
+
+Once your environment is active (you should see `(venv)` in your terminal), install the required libraries:
+
 ```bash
 pip install -r requirements.txt
-```
-### ⚙️ Configuration
-## 1.Get your Free API Key from Google AI Studio.
-## 2.Create a .env file in the project folder:
-```bash
-cp .env.example .env
-nano .env
-```
-## 3.Paste your key inside the file:
-```bash
-GEMINI_API_KEY=PASTE_YOUR_API_KEY_HERE
+
 ```
 
-### 🚀 Usage
-## 💬 Ask a Question
+---
+
+## ⚙️ Configuration
+
+1. **Get your API Key:**
+Go to [Google AI Studio](https://aistudio.google.com/) and create a free API Key.
+2. **Set up the environment file:**
+Create a file named `.env` in the project folder and paste your key inside.
 ```bash
-python ask.py "Write a bash script to update Arch Linux mirrors"
+# Create the file
+nano .env
+
 ```
-## 🔍 Check Available Models
-Not sure which model works? Run the diagnostic tool to see all models on your account:
+
+
+**Inside `.env` file:**
+```env
+GEMINI_API_KEY=PASTE_YOUR_API_KEY_HERE
+
+```
+
+
+*(Save with `Ctrl+O`, `Enter`, then Exit with `Ctrl+X`)*
+
+---
+
+## 🚀 Usage
+
+### Ask a question
+
+To send a prompt to Gemini, simply run `ask.py` followed by your question:
+
+```bash
+python ask.py "Write a simple Python script to list files in a directory"
+
+```
+
+### Check available models
+
+If you are getting "Model not found" errors, run this script to see which models your API key has access to:
+
 ```bash
 python check_models.py
-```
-## 🔧 Change AI Model
-Edit ask.py to switch between different versions of Gemini:
-```bash 
-# Inside ask.py - line 24
-response = client.models.generate_content(
-    model="gemini-flash-lite-latest", # <--- Change model name here
-    contents=prompt
-)
+
 ```
 
-### ⚠️ Troubleshooting
-| Error Code | Potential Cause | How to Fix |
-| :--- | :--- | :--- |
-| **429 RESOURCE_EXHAUSTED** | Free tier quota reached. | Wait 60 seconds or switch to a "Lite" model. |
-| **404 NOT_FOUND** | Incorrect model name in code. | Run `check_models.py` and update `ask.py`. |
-| **ModuleNotFoundError** | Virtual environment not active. | Run `source venv/bin/activate.fish`. |
+### Change the Model
+
+You can edit `ask.py` to change the model version (e.g., if you want to use a newer or faster version):
+
+```python
+# Inside ask.py
+response = client.models.generate_content(
+    model="gemini-flash-lite-latest", # <--- Change this line
+    contents=prompt
+)
+
+```
+
+---
+
+## ⚠️ Troubleshooting
+
+* **Error 429 (Resource Exhausted):**
+This means you hit the free tier limit. Wait for a minute and try again, or switch to a "Lite" model in the code.
+* **Error 404 (Not Found):**
+The model name in `ask.py` is incorrect or deprecated. Run `python check_models.py` to see the valid names and update your code.
+
+---
+
+## 📜 License
+
+MIT License
+
+```
+
+```
